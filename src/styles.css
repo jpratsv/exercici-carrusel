@@ -1,0 +1,13 @@
+* {
+  padding: 0.4rem;
+}
+
+.detalle {
+  display: flex;
+  flex-direction: row;
+
+  width: 30%;
+  height: 30%;
+}
+
+

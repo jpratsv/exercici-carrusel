@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import Carrusel from "./Carrusel";
 
 export default function App() {

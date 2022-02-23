@@ -6,7 +6,7 @@
 // 6.Ressaltar el punt de la imatge actual
 // 7.Anar a la imatge del punt en fer clic
 
-import "./styles.css";
+import "./style.css";
 import { useState } from "react";
 
 export default function Carrusel() {
@@ -21,27 +21,43 @@ export default function Carrusel() {
 
   const [indexFotoActual, setIndexFotoActual] = useState(1);
 
-  const visualiza = (foto) => setIndexFotoActual(foto);
+  function visualiza(foto) {
+    setIndexFotoActual(foto);
+  }
 
   return (
     <>
-      <body class="Galeria">
-        <div class="general">
-          <header>
-            <h1>Práctica Galeria de fotografias</h1>
-          </header>
-          <main class="detalle">
-          <div class="">
-
-          </div>
-            <img src={"img/" + indexFotoActual + ".jpg"} alt="Imagen 1"></img>
-          </main>
+   
+        <div id="header">
+          <h1> Actividad CARRUSEL DE FOTOGRAFÍAS </h1>
+          <p> Práctica de</p> REACT
         </div>
-      </body>
+       
+        <div id="contenedor">
+          <div id="col1">
+            <img
+              onClick={() => {indexFotoActual > 0 ? visualiza(indexFotoActual-1) : visualiza(indexFotoActual)}}
+              src="img/izquierda.png"
+              alt="Imagen 1"
+            ></img>
+          </div>
+          
+          <div id="col2">
+            <img
+              src={"img/"+ indexFotoActual + ".jpg"}
+              alt="Imagen 2"
+            ></img>
+          </div>
 
-      <footer>
-        <p>Final</p>
-      </footer>
+          <div id="col3">
+            <img
+                onClick={() => {indexFotoActual < galeria.length ? visualiza(indexFotoActual-1) : visualiza(indexFotoActual)}}
+                src="img/derecha.png"
+                alt="Imagen 3">
+            </img>
+          </div>
+        </div>
+
     </>
   );
 }
